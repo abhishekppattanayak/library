@@ -1,0 +1,110 @@
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+body {
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 10fr minmax(50px,auto);
+}
+header {
+    padding: 1rem min(15%, 12vw);
+    outline: 1px solid black;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+header h1{
+    font-size: clamp(2.5rem, 3.4vw, 3rem);
+}
+header button {
+    font-size: clamp(1rem, 3.4vw, 1.5rem);
+}
+main {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+
+}
+main > ul {
+    padding-top: 12px;
+    margin-left:  48px;
+    margin-right: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-auto-rows: minmax(auto, 240px);
+    gap: 36px;
+}
+main li {
+    justify-self: center;
+    width: 340px;
+    text-align: center;
+    border-radius: 12px;
+    outline: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+li button {
+    padding: 12px;
+    font-size: clamp(1rem, 3.4vw, 1.5rem);
+    border: none;
+    border-radius: 8px;
+}
+.read {
+    background-color: lightgreen;
+}
+.not-read {
+    background-color: lightcoral;
+}
+main > button {
+    justify-self: center;
+    align-self: center;
+    padding: 2rem 4rem;
+    font-size: clamp(1rem, 3.4vw, 1.5rem);
+    border-radius: 8px;
+    border: none;
+    outline: 1px solid gray;
+}
+footer {
+    margin: auto;
+    display: flex;
+    gap: 16px;
+    font-size: clamp(1rem, 3.4vw, 1.5rem);
+}
+footer a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+dialog {
+    position: absolute;
+    margin: auto;
+    border: none;
+    background-color: lightgray;
+    border-radius: 12px;
+    padding: 24px;
+    font-size: clamp(1.5rem, 3.4vw, 1.75rem);
+}
+dialog button {
+    padding: 6px 12px;
+}
+dialog > button {
+    position: relative;
+    left: 25vw;
+}
+form {
+    width: 34vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
