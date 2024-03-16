@@ -1,10 +1,19 @@
 document.querySelector('footer>span').textContent = `Copyright © ${new Date().getFullYear()} `;
 
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+// function Book(title, author, pages, read){
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
+
+class Book {
+    constructor(title,author,pages,read){
+        this._title = title;
+        this._author = author;
+        this._pages = pages;
+        this._read = read;
+    }
 }
 
 const library = [
@@ -23,17 +32,17 @@ const addBookToLibraryFromArray = () => {
         
         const li = document.createElement('li');
         const header = document.createElement('h1');
-        header.textContent = book["title"];
+        header.textContent = book._title;
         const author = document.createElement('h2');
-        author.textContent = book["author"];
+        author.textContent = book._author;
         const pages = document.createElement('input');
         pages.type = 'number';
-        pages.value = book['pages'];
+        pages.value = book._pages;
         const button = document.createElement('button');
-        button.textContent = book["read"] ? 'Read' : 'Not Read';
+        button.textContent = book._read ? 'Read' : 'Not Read';
         const remove = document.createElement('button');
         remove.textContent = 'Remove book'
-        button.classList.add(book["read"]?"read":"not-read");
+        button.classList.add(book._read?"read":"not-read");
 
         button.addEventListener('click', ()=>{
             button.classList.toggle('read');
